@@ -39,7 +39,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "styled-system": "^5.1.4",
-    "ts-utils": "^6.1.0"
+    "ts-utils": "^6.1.0",
+    "waves-provider-aura": "^1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

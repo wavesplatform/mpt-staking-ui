@@ -29,6 +29,7 @@
   "keeperWallet": "Keeper Wallet",
   "seed": "WX Network Seed",
   "cloud": "WX Network Email",
+  "aura": "Aura Wallet",
   "metaMask": "MetaMask",
   "ledger": "Ledger",
   "signCustomData": {

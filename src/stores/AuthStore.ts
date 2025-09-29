@@ -8,6 +8,7 @@ import { AppStore } from './AppStore';
 import { ChildStore } from './ChildStore';
 import { computed, makeObservable, observable, runInAction } from 'mobx';
 import { ProviderMetamask } from '@waves/provider-metamask';
+import { ProviderAura } from 'waves-provider-aura';
 
 export enum USER_TYPES {
     keeper = 'keeper',
@@ -22,7 +23,8 @@ export enum PROVIDER_TYPES {
     metamask = 'metamask',
     wx = 'wx',
     web = 'web',
-    cloud = 'cloud'
+    cloud = 'cloud',
+    aura = 'aura',
 }
 
 export type USER_TYPES_VALUES = keyof typeof USER_TYPES;
@@ -118,6 +120,10 @@ export class AuthStore extends ChildStore  {
 
             case PROVIDER_TYPES.metamask:
                 this.provider = new ProviderMetamask();
+                break;
+
+            case PROVIDER_TYPES.aura:
+                this.provider = new ProviderAura();
                 break;
 
             default:

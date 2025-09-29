@@ -6,6 +6,7 @@ import metamaskUrl from '/src/img/metamask.svg';
 import keeperUrl from '/src/img/keeper.svg';
 import wxUrl from '/src/img/wx.svg';
 import ledgerUrl from '/src/img/ledger.svg';
+import auraUrl from '/src/img/aura.svg';
 import { PROVIDER_TYPES, PROVIDER_TYPES_VALUES } from '../../../../../stores/AuthStore.ts';
 import { useAuth } from '../../../../../hooks/useAuth.ts';
 import { MODAL_NAMES } from '../../../../../components/ModalContainer/MODAL_NAMES.ts';
@@ -208,6 +209,7 @@ export const ConnectBlock: FC = memo(() => {
                                 isInvalid={errors.includes(ERROR.uncheckedProvider)}
                                 isActive={selectedProvider === PROVIDER_TYPES.cloud}
                                 onClick={() => onSetProvider(PROVIDER_TYPES.cloud)}
+                                mb={20}
                                 maxWidth="330px"
                                 display="flex"
                                 sx={{ alignItems: 'center' }}
@@ -222,6 +224,28 @@ export const ConnectBlock: FC = memo(() => {
                                 />
                                 <Text fontWeight={300}>
                                     <Trans i18key="cloud" />
+                                </Text>
+                            </Button>
+                            <Button
+                                variant="transparent"
+                                variantSize="large"
+                                isInvalid={errors.includes(ERROR.uncheckedProvider)}
+                                isActive={selectedProvider === PROVIDER_TYPES.aura}
+                                onClick={() => onSetProvider(PROVIDER_TYPES.aura)}
+                                maxWidth="330px"
+                                display="flex"
+                                sx={{ alignItems: 'center' }}
+                            >
+                                <Box
+                                    width="28px"
+                                    height="28px"
+                                    backgroundImage={`url(${auraUrl})`}
+                                    backgroundRepeat="no-repeat"
+                                    backgroundPosition="center center"
+                                    sx={{ mr: '12px' }}
+                                />
+                                <Text fontWeight={300}>
+                                    <Trans i18key="aura" />
                                 </Text>
                             </Button>
                         </Box>
